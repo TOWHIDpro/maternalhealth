@@ -1,0 +1,47 @@
+{% extends 'index/core.html' %}
+{% load static %}
+
+{% block title %}<title>About us</title>{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <div class="mt-3 bg-image">
+        <div class="row row-no-gutter container">
+            <div class="col-md-6 img-responsive">
+                <div class="card " style="width: 18rem;">
+                    <img src="{% static 'index/images/apu.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <p class="card-text">Sunzida Mahazabin</p>
+                    <p class="card-text">Id: Wub03/19/44/2875</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 img-responsive">
+                <div class="card " style="width: 18rem;">
+                    <img src="{% static 'index/images/vai.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <p class="card-text">MD Arafater Rahman Faysal</p>
+                    <p class="card-text">Id: Wub03/19/44/2897</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="alert alert-success copyright" role="alert">
+            <h3 class="alert-heading">Pregnancy health risk checker</h3>
+            <p>The Machine Learning-Based Web application for Predicting Maternal Health During Pregnancy Period is an Web Application.</p> 
+            <p>Maternal mortality is a major public health problem worldwide, especially in low-income countries. In our web application, we examine the high-risk factors associated with maternal mortality and identify the level of risk during pregnancy.</p>
+            <p>We have used a machine learning algorithm that focuses on maternal health risks during pregnancy so that pregnant ladies and their families can know the level of risk to pregnant ladies and take action accordingly.</p>
+            <p>We use machine pick-up learning techniques, for example, supervised learning and deep learning to estimate the level of risk through frame during pregnancy in this review. However, identify the main causes of maternal health risks during pregnancy such as blood sugar, systolic blood pressure, diastolic blood pressure and heart rate.</p> 
+            <p>Using the web, individuals can connect to our structures, their  blood sugar, input. Separates systolic blood pressure, diastolic blood pressure, weight, age, and heart rate and risk levels.</p>
+            <hr>
+            <a href="{% url 'check_health' %}" class="btn btn-outline-success">Back</a>
+            <a href="/" class="btn btn-outline-danger m-3">Home</a>
+        </div>
+        <br>
+        <br>
+    </div>
+</div>
+{% endblock content %}
+
+

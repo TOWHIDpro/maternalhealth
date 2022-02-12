@@ -1,0 +1,25 @@
+{% extends 'index/core.html' %}
+{% load static %}
+
+{% block title %}<title>Your result</title>{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <div class="alert alert-success mt-5" role="alert">
+        <h3 class="mb-0">{{data.user}}</h3>
+        <p class="mb-0">AGE: {{data.age}}</p>
+        <p class="mb-0">SystolicBP: {{data.systolicbp}}</p>
+        <p class="mb-0">DiastolicBP: {{data.diastolicbp}}</p>
+        <p class="mb-0">BS: {{data.bs}}</p>
+        <p class="mb-0">HeartRate: {{data.heartRate}}</p>
+        <p class="mb-0">Date: {{data.date}}</p>
+        <hr>
+        <h4 class="alert-heading">{{data.message}}</h4>  
+    </div>
+    <a href="{% url 'check_health' %}" class="btn btn-outline-dark">Back</a>
+    <a href="/" class="btn btn-outline-danger">Home</a>
+    <a href="{% url 'all_result' %}" class="btn btn-outline-success">See all</a>
+</div>
+{% endblock content %}
+
+

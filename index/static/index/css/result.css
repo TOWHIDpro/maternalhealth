@@ -1,0 +1,26 @@
+a {
+    color: inherit; /* blue colors for links too */
+    text-decoration: inherit; /* no underline */
+    text-align: center;
+  }
+body{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(../images/p9.jpg);
+  /* background-position: center; */
+  background-size: 100%;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(2px);
+}
+.bg-image{
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* height: 100vh; */
+  color: white;
+}
+
+
+
+

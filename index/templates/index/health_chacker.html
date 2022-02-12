@@ -1,0 +1,70 @@
+{% extends 'index/core.html' %}
+{% load static %}
+
+<!-- css -->
+{% block link %}
+<link rel="stylesheet" href="{% static 'index/fonts/material-icon/css/material-design-iconic-font.min.css' %}">
+<link rel="stylesheet" href="{% static 'index/css/style.css' %}">
+{% endblock link %}
+
+<!-- main content -->
+{% block content %}
+
+<div class="main">
+    <div class="text-center">
+        <h1 class="signup-image-link" style="color:rgb(255, 0, 76);font-size:40px">Your id is : {{ request.user }}</h1>
+        <p>Keep you id for next time use</p>
+    </div>
+    <!-- Health checker form -->
+    <section class="signup">
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-form">
+                    <h2 class="form-title">Check Your Health</h2>
+                    <form method="POST" class="register-form" id="register-form">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="age"><i class="zmdi zmdi-male material-icons-name"></i></label>
+                            <input type="number" min="1" max="2" required name="age" id="age" step="0.01" placeholder="Your Age"/>
+                        </div>
+                        <!-- SystolicBP -->
+                        <div class="form-group">
+                            <label for="systolicbp"><i class="zmdi zmdi-trending-down material-icons-name"></i></label>
+                            <input type="number" required name="systolicbp" id="systolicbp" step="0.01" placeholder="SystolicBP"/>
+                        </div>
+                        <!-- DiastolicBP -->
+                        <div class="form-group">
+                            <label for="diastolicbp"><i class="zmdi zmdi-trending-up material-icons-name"></i></label>
+                            <input type="number" required name="diastolicbp" id="diastolicbp" step="0.01" placeholder="DiastolicBP"/>
+                        </div>
+                        <!-- HeartRate -->
+                        <div class="form-group">
+                            <label for="bs"><i class="zmdi zmdi-invert-colors material-icons-name"></i></label>
+                            <input type="number" required name="bs" id="bs" step="0.01" placeholder="BS"/>
+                        </div>
+                        <!-- Age -->
+                        <div class="form-group">
+                            <label for="heartRate"><i class="zmdi zmdi-favorite material-icons-name"></i></label>
+                            <input type="number" required name="heartRate" id="heartRate" step="0.01" placeholder="HeartRate"/>
+                        </div>
+                        
+                        <div class="form-group form-button">
+                            <input type="submit" name="signup" id="signup" class="form-submit" value="Submit"/>
+                        </div>
+                    </form>
+                </div>
+                <div class="signup-image">
+                    <figure><img src="{% static 'index/images/pgnt.jpg' %}" width="500" height="600" alt="pregnent women image"></figure>
+                    <a href="/" class="signup-image-link">GO to home</a>
+                    
+                </div>
+            </div>
+            <a href="{% url 'all_result' %}" class="signup-image-link button-29">See all results</a> <br>
+            <div class="text-center">
+                <a href="{% url 'about' %}" class="btn btn-outline-success">About</a>
+            </div>
+            <br>
+        </div>
+    </section>
+</div>
+{% endblock content %}

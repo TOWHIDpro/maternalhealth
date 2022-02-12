@@ -1,0 +1,25 @@
+{% extends 'index/core.html' %}
+{% load static %}
+
+{% block title %}<title>Login</title>{% endblock title %}
+
+{% block link %}<link rel="stylesheet" href="{% static 'index/css/userid.css' %}">{% endblock link %}
+
+{% block content %}
+<div class="container form-div">
+  <form method="POST">
+      {% csrf_token %}
+      <div class="form-group mt-5">
+        <div class="form-group">
+          <label for="userid">User Id</i></label>
+          <input type="text" required class="form-control" name="userid" id="userid" placeholder="Put your id here"/>
+        </div>
+        <small id="emailHelp" class="form-text text-muted">We'll never share your userid with anyone else.</small>
+      </div>
+      
+      <button type="submit" class="btn btn-warning">Submit</button>
+      <a href="/" class="btn btn-danger m-2">Home</a>
+    </form>
+</div>
+{% endblock content %}
+

@@ -1,0 +1,51 @@
+{% extends 'index/core.html' %}
+{% load static %}
+
+{% block title %}<title>Index</title>{% endblock title %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'index/css/index.css' %}">
+<link rel="stylesheet" href="{% static 'index/css/confirm_new_user.css' %}">
+{% endblock link %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="mt-5 bg-image">
+        <div class="alert alert-success copyright" role="alert">
+            <h3 class="alert-heading">Pregnancy health risk checker</h3>
+            {% comment %} <p>The Machine Learning-Based Web application for Predicting Maternal Health During Pregnancy Period is an Web Application.</p> 
+            <p>Maternal mortality is a major public health problem worldwide, especially in low-income countries. In our web application, we examine the high-risk factors associated with maternal mortality and identify the level of risk during pregnancy.</p>
+            <p>We have used a machine learning algorithm that focuses on maternal health risks during pregnancy so that pregnant ladies and their families can know the level of risk to pregnant ladies and take action accordingly.</p>
+            <p>We use machine pick-up learning techniques, for example, supervised learning and deep learning to estimate the level of risk through frame during pregnancy in this review. However, identify the main causes of maternal health risks during pregnancy such as blood sugar, systolic blood pressure, diastolic blood pressure and heart rate.</p> 
+            <p>Using the web, individuals can connect to our structures, their  blood sugar, input. Separates systolic blood pressure, diastolic blood pressure, weight, age, and heart rate and risk levels.</p> {% endcomment %}
+            <hr>
+            <p class="mb-0">Click wich category you are in.</p>
+        </div>
+
+        
+        <div class="mt-5">
+            <div class="alert alert-danger bigbtn" role="alert">
+                <a href="{% url 'user_login' %}"><h2>Old user</h2></a>
+            </div>
+            <div @click="confirmbox=true" class="alert alert-warning" role="alert">
+                <a><h2>New user</h2></a>
+            </div>
+        </div>
+    </div>
+
+    <div v-if="confirmbox" class="popup container">
+        <div class="popup-inner">
+              <h1>Are you sure you want to create a new user</h1>
+              <br>
+              <a class="btn btn-outline-danger" @click.prevent="confirmbox=false">No</a>
+              <a class="btn btn-outline-success m-2" href="{% url 'check_health' %}">Yes</a>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+
+{% block scripts %}
+<script src="{% static 'index/js/index.js' %}"></script>
+<script>app.mount('#app')</script>
+{% endblock scripts %}

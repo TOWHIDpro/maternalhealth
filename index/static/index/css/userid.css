@@ -1,0 +1,27 @@
+/* body {
+    background-image: url(../images/p3.jpg);
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  } */
+
+body{
+    background-size: 80%;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../images/p5.jpg);
+    /* background-position: center; */
+    background-repeat: no-repeat;
+    backdrop-filter: blur(2px);
+    
+  }
+.form-div{
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: white;
+  }
+  
