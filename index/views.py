@@ -10,6 +10,7 @@ def index(request):
     if request.user.is_authenticated:
         logout(request)
     else:pass
+    
     return render(request, 'index/index.html')
 
 # Main calculator
